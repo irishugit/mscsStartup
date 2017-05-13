@@ -1,0 +1,35 @@
+/*
+* @Author: Iris Hu
+* @Date:   2017-05-13 14:15:05
+* @Last Modified by:   Iris Hu
+* @Last Modified time: 2017-05-14 02:36:35
+*/
+
+/*隐藏加载前大括号闪现问题*/
+[v-cloak] {
+  display: none;
+}
+/*统一的间距*/
+.largePadding{
+	padding: 3rem 0;
+}
+.smallPadding{
+	padding: 1.5rem;
+}
+
+/*定义a标签没有下划线*/
+.aNone,.aNone:hover,.aNone:focus,.aNoune:visited{
+	text-decoration: none;
+}
+/*禁止文字被选择*/
+.user-select-no{
+	user-select:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+}
+
+/*内容不同区域，颜色不同*/
+.per-content:nth-child(odd){
+	background-color: #f2f2f2;
+}

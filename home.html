@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>微软云暨移动技术孵化计划</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9; IE=10;IE=11">
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <link rel="shortcut icon" href="https://www.microsoft.com/favicon.ico?v2">
+    
+    <!-- 私人订制bootstrap -->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+
+    <!-- 微软头部底部相关样式 -->
+    <link rel="stylesheet" href="lib/microsoft/css/templete.css" type="text/css" media="all" />
+
+    <!-- 公用css样式 -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" media="all" />  
+
+		<!-- vue框架，在head里引用会避免大括号闪现问题 -->
+    <script src="lib/vue_delvelope_1.0.js"></script>
+    <!-- 上线时使用 -->
+    <!-- <script src="https://cdn.bootcss.com/vue/1.0.28/vue.min.js"></script> -->
+</head>
+
+<body>
+    
+    <div id="mainApp" v-cloak>
+        <main-contain >
+            <banner type="image" :banner-data="imageBannerData" id="image"></banner>
+
+            <div class="container">
+                <!-- 三个logo区域 -->
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 largePadding text-center user-select-no" v-for="l in logoDatas">
+                    	<a class="aNone" href="{{l.url}}">
+                    		<img v-bind:src="l.img" />
+                    		<h2 class="text-center" style="color: #0078d7;margin: 1rem 0 0.4rem 0;" ><b>{{l.mainText}}</b></h2>
+                        <h4 class="text-center" style="color: #0078d7;">{{l.smallText}}</h4>
+                    	</a>
+                    </div>
+                </div>
+
+                <!-- 赠语区 -->
+                <banner type="text" :banner-data="textBannerData" during-time="6000" style="margin-bottom: 2rem;" id="giveSentence"></banner>
+            </div>
+
+            <!-- 项目概述区 -->
+            <div class="per-content largePadding">
+            	<div class="container">
+            		<h2>项目概述</h2>
+            	</div>
+            </div>
+
+            <!-- 最新动态区 -->
+            <div class="per-content largePadding">
+             <div class="container">
+              <h2>最新动态</h2>
+             </div>
+            </div>
+
+            <!-- 各地孵化平台、优秀团队展示区 -->
+            <div class="per-content largePadding">
+             <div class="container">
+             	<div class="row">
+             		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+             			<h2>各地孵化平台</h2>
+             		</div>
+             		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+             			<h2>优秀团队展示</h2>
+             		</div>
+             	</div>
+             </div>
+            </div>
+            
+        </main-contain>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+		
+    <!-- 私人订制bootstrap js -->
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+
+    <!-- 微软头部顶部相关 -->
+    <script src="lib/microsoft/js/siteSearch.js"></script>
+    <!-- <script src="lib/microsoft/js/main.js"></script> -->
+
+    <!-- vue头部底部控件,控件必须加载在根节点之前 -->
+    <script src="js/header-footer.component.js"></script>
+
+    <!-- home页的js -->
+    <script src="js/home.js"></script>
+
+
+    <!-- 微软头底部自带 -->
+<!--     <div style="display: none">
+        <script type="text/javascript">
+            var varAutoFirePV = 1;
+            var varClickTracking = 1;
+            var varCustomerTracking = 1;
+            var Route = "route_id";
+            var Ctrl = "control_id";
+            document.write("<script type='text/javascript' src='" + (window.location.protocol) + "//c.microsoft.com/ms.js'" + "'><\/script>");
+        </script>​
+    </div> -->
+    
+</body>
+
+</html>
