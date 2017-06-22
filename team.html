@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>微软云暨移动技术孵化计划</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9; IE=10;IE=11">
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="shortcut icon" href="https://www.microsoft.com/favicon.ico?v2">
+    
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+
+    <!-- 微软头部底部相关样式 -->
+    <link rel="stylesheet" href="lib/microsoft/css/templete.css" type="text/css" media="all" />
+
+    <!-- 公用css样式 -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" media="all" />  
+	<!-- vue框架，在head里引用会避免大括号闪现问题 -->
+    <!-- <script src="lib/vue_delvelope_1.0.js"></script> -->
+    <!-- 上线时使用 -->
+    <script src="lib/vue.min.js"></script>
+</head>
+
+<body>
+    
+    <div id="mainApp" v-cloak>
+        <main-contain active-item="team" id="team">
+
+        	<div class="container">
+        		<bread-crumb :datas.sync="breadDatas"></bread-crumb>
+                <ms-tab :datas.sync="tabDatas" img-class="col-lg-6 col-md-6 col-sm-6 col-xs-12" text-div-class="col-lg-6 col-md-6 col-sm-6 col-xs-12" :location-url="locationTo" item-class="platformList"></ms-tab>
+        	</div>
+                
+        </main-contain>
+    </div>
+
+    <script src="lib/jquery-2.2.0.min.js"></script>
+		
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+
+    <!-- 微软头部顶部相关 -->
+    <script src="lib/microsoft/js/siteSearch.js"></script>
+    <!-- <script src="lib/microsoft/js/main.js"></script> -->
+    
+    <!-- 公共属性和方法 -->
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
+
+    <!-- vue头部底部控件,控件必须加载在根节点之前 -->
+    <script src="js/header-footer.component.js"></script>
+    <!-- 每一块导航内容组件 -->
+    <script src="js/content-item.component.js"></script>
+    <!-- 面包屑和tab组件 -->
+    <script src="js/breadcrumbAndTab.component.js"></script>
+		
+    <!-- team页的js -->
+    <script src="js/team.js"></script>
+
+
+    <!-- 微软头底部自带 -->
+    <div style="display: none">
+        <script type="text/javascript">
+            var varAutoFirePV = 1;
+            var varClickTracking = 1;
+            var varCustomerTracking = 1;
+            var Route = "route_id";
+            var Ctrl = "control_id";
+            document.write("<script type='text/javascript' src='" + (window.location.protocol) + "//c.microsoft.com/ms.js'" + "'><\/script>");
+        </script>​
+    </div>
+    
+</body>
+
+</html>

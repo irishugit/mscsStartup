@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>微软云暨移动技术孵化计划</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9; IE=10;IE=11">
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="shortcut icon" href="https://www.microsoft.com/favicon.ico?v2">
+    
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+
+    <!-- 微软头部底部相关样式 -->
+    <link rel="stylesheet" href="lib/microsoft/css/templete.css" type="text/css" media="all" />
+
+    <!-- 公用css样式 -->
+    <link rel="stylesheet" type="text/css" href="css/common.css" media="all" />  
+
+	<!-- vue框架，在head里引用会避免大括号闪现问题 -->
+    <!-- <script src="lib/vue_delvelope_1.0.js"></script> -->
+    <!-- 上线时使用 -->
+    <script src="lib/vue.min.js"></script>
+</head>
+
+<body>
+    
+    <div id="mainApp" v-cloak>
+        <main-contain active-item="about">
+         
+         	<!-- 图片区域 -->
+         	<div class="about-header-background" style="background-image: url('./images/about/guanyuwomen1.png');">
+         		<div class="text-center" style="color: #f2f2f2;height: 100%;background-color: rgba(8,8,8,.4);padding: 10% 0;">
+         			<h1 style="font-weight: 100;margin-bottom: 1rem;">微软-云暨移动技术孵化计划</h1>
+         			<h3 style="font-weight: 100;">为 梦 想 助 力</h3>
+         		</div>
+         	</div>
+
+         	<!-- 创业导师区域 -->
+            <div class="per-content largePadding" v-if="teacherDatas.length > 0 ? true :false">
+            	<div class="container smallPadding" >
+            		<h3 class="text-center">创业导师联盟</h3>
+            		<ul class="row">
+            			<li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 " style="padding: 3rem;" v-for="t in teacherDatas">
+            				<a href="{{t.link}}" class="aNone" style="color: #555;">
+            					<img :src="t.imgUrl" alt="{{t.imgAlt}}" style="width: 100%;max-height: 280px;">
+	            				<div style="background-color: #f2f2f2;padding: 1.5rem;">
+	            					<h4 style="padding-bottom: 1rem;font-weight: 600;">{{t.name}}</h4>
+		            				<h5 style="padding-bottom: .7rem;font-weight: 600;">{{t.position}}</h5>
+		            				<p>{{t.summary}}</p>
+	            				</div>
+            				</a>            				
+            			</li>
+            		</ul>
+            	</div>
+            </div>
+
+            <!-- 战略合作伙伴 -->
+            <div class="per-content largePadding">
+            	<div class="container smallPadding" >
+            		<h3 class="text-center">战略合作伙伴</h3>
+            		<ul class="row" style="padding-top: 2rem;">
+            			<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 smallPadding" style="text-align: center;" v-for="p in partnerDatas">
+            				<a href="{{p.link}}" class="aNone" style="color: #555;" target="_blank">
+	            				<img :src="p.imgUrl" alt="{{p.imgAlt}}" style="width: 130px;height: 100px;">
+	            				<p class="text-center" style="margin-top: .5rem;">{{p.logoName}}</p>
+            				</a>
+            			</li>
+            		</ul>
+            	</div>
+            </div>
+
+            <!-- 联系我们 -->
+            <div class="per-content largePadding" >
+            	<div class="container smallPadding" >
+            		<h3 class="text-center">联系微软-云暨移动孵化计划项目团队</h3>
+            		<ul class="row" style="padding-top: 2rem;">
+            			<li class="col-lg-12 col-md-12 col-sm-12 col-xs-12 smallPadding">
+            				<div class="contact-us-container" id="beijing">
+	            				<div class="contact-us-logo" >北京</div>
+	            				<div class="contact-us-con" >
+	            					<p>地址：北京市海淀区丹棱街5号，微软亚太研发集团总部1号楼</p>
+	            					<p>邮 编：100080</p>
+	            					<p>邮 箱：aoa@microsoft.com</p>
+	            				</div>
+            				</div>
+            			</li>
+            		</ul>
+            	</div>
+            </div>
+
+        </main-contain>
+    </div>
+
+    <script src="lib/jquery-2.2.0.min.js"></script>
+		
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+
+    <!-- 微软头部顶部相关 -->
+    <script src="lib/microsoft/js/siteSearch.js"></script>
+    <!-- <script src="lib/microsoft/js/main.js"></script> -->
+
+    <!-- 公共属性和方法 -->
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
+
+    <!-- vue头部底部控件,控件必须加载在根节点之前 -->
+    <script src="js/header-footer.component.js"></script>
+    <!-- 每一块导航内容组件 -->
+    <script src="js/content-item.component.js"></script>
+
+    <!-- home页的js -->
+    <script src="js/about-us.js"></script>
+
+
+    <!-- 微软头底部自带 -->
+    <div style="display: none">
+        <script type="text/javascript">
+            var varAutoFirePV = 1;
+            var varClickTracking = 1;
+            var varCustomerTracking = 1;
+            var Route = "route_id";
+            var Ctrl = "control_id";
+            document.write("<script type='text/javascript' src='" + (window.location.protocol) + "//c.microsoft.com/ms.js'" + "'><\/script>");
+        </script>​
+    </div>
+    
+</body>
+
+</html>

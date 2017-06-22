@@ -9,11 +9,12 @@
     <meta name="Keywords" content="" />
     <meta name="Description" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="shortcut icon" href="https://www.microsoft.com/favicon.ico?v2">
     
-    <!-- 私人订制bootstrap -->
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+
 
     <!-- 微软头部底部相关样式 -->
     <link rel="stylesheet" href="lib/microsoft/css/templete.css" type="text/css" media="all" />
@@ -21,45 +22,62 @@
     <!-- 公用css样式 -->
     <link rel="stylesheet" type="text/css" href="css/common.css" media="all" />  
 
-		<!-- vue框架，在head里引用会避免大括号闪现问题 -->
-    <script src="lib/vue_delvelope_1.0.js"></script>
+	<!-- vue框架，在head里引用会避免大括号闪现问题 -->
+    <!-- <script src="lib/vue_delvelope_1.0.js"></script> -->
     <!-- 上线时使用 -->
-    <!-- <script src="https://cdn.bootcss.com/vue/1.0.28/vue.min.js"></script> -->
+    <script src="lib/vue.min.js"></script>
 </head>
 
 <body>
     
     <div id="mainApp" v-cloak>
         <main-contain >
-            <banner type="image" :banner-data="imageBannerData" id="image"></banner>
+            <div class="container" id="banner">
+              <banner type="image" :banner-data="imageBannerData" id="image"></banner>
+            </div>
 
-            <div class="container">
+            <div class="container" id="quickNav">
+              
                 <!-- 三个logo区域 -->
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 largePadding text-center user-select-no" v-for="l in logoDatas">
+                    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12 largePadding text-center user-select-no" v-for="l in logoDatas">
                     	<a class="aNone" href="{{l.url}}">
                     		<img v-bind:src="l.img" />
-                    		<h2 class="text-center" style="color: #0078d7;margin: 1rem 0 0.4rem 0;" ><b>{{l.mainText}}</b></h2>
-                        <h4 class="text-center" style="color: #0078d7;">{{l.smallText}}</h4>
+                    		<h2 class="text-center" style="color: #0099cc;margin: 1rem 0 0.4rem 0;" ><b>{{l.mainText}}</b></h2>
+                        <h4 class="text-center" style="color: #0099cc;">{{l.smallText}}</h4>
                     	</a>
                     </div>
                 </div>
 
                 <!-- 赠语区 -->
                 <banner type="text" :banner-data="textBannerData" during-time="6000" style="margin-bottom: 2rem;" id="giveSentence"></banner>
+
+                <img src="images/home/map.png" style="margin:2rem auto;display: block;max-width: 100%;" />
             </div>
 
             <!-- 项目概述区 -->
-            <div class="per-content largePadding">
-            	<div class="container">
-            		<h2>项目概述</h2>
+            <div class="per-content largePadding" id="projectContainer">
+            	<div class="container" >
+            		<h2 class="nav-title">项目概述</h2>
+
+            		<div class="row" style="padding-right: 15px;">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" style="padding-right: 0;" v-for="p in projectNavData">
+                     <content-item  :datas="p" type="nav" direction="column" img-margin="2.5rem 0 1rem 0 " :location-url="navDatas.project"></content-item>
+                  </div>
+            		</div>
             	</div>
             </div>
 
             <!-- 最新动态区 -->
             <div class="per-content largePadding">
              <div class="container">
-              <h2>最新动态</h2>
+              <h2 class="nav-title">最新动态</h2>
+
+              <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"  v-for="n in newsNavData">
+                    <content-item  :datas="n" type="nav" direction="column" img-margin="2.2rem 0 1rem 0 "  :location-url="navDatas.news"></content-item>
+                  </div>
+            		</div>
              </div>
             </div>
 
@@ -67,11 +85,24 @@
             <div class="per-content largePadding">
              <div class="container">
              	<div class="row">
-             		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-             			<h2>各地孵化平台</h2>
+             		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+             			<h2 class="nav-title">各地孵化平台</h2>
+                  <a class="aNone" href="{{navDatas.platform}}" style="float: right;"><button class="ms-btn-blue btn">了解更多>></button></a>
+             			<div class="row" style="padding-right: 15px;">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-right: 0;" v-for="n in platformNavData">
+                    <content-item  :datas="n" type="nav" direction="column" img-margin="2.2rem 0 1rem 0 " title-align="center" :location-url="platformLocationTo"></content-item>
+                    </div>
+             			</div>
              		</div>
-             		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-             			<h2>优秀团队展示</h2>
+
+             		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+             			<h2 class="nav-title">优秀团队展示</h2>
+                  <a class="aNone" href="{{navDatas.team}}" style="float: right;"><button class="ms-btn-blue btn" >了解更多>></button></a>
+             			<div class="row" style="padding-right: 15px;">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-right: 0;" v-for="n in teamNavData">
+                    <content-item  :datas="n" type="nav" direction="column" img-margin="2.2rem 0 1rem 0 " title-align="center"></content-item>
+                    </div>
+             			</div>
              		</div>
              	</div>
              </div>
@@ -80,24 +111,28 @@
         </main-contain>
     </div>
 
-    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+   <script src="lib/jquery-2.2.0.min.js"></script>
 		
-    <!-- 私人订制bootstrap js -->
     <script src="lib/bootstrap/bootstrap.min.js"></script>
 
     <!-- 微软头部顶部相关 -->
     <script src="lib/microsoft/js/siteSearch.js"></script>
-    <!-- <script src="lib/microsoft/js/main.js"></script> -->
+
+    <!-- 公共属性和方法 -->
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
 
     <!-- vue头部底部控件,控件必须加载在根节点之前 -->
     <script src="js/header-footer.component.js"></script>
+    <!-- 每一块导航内容组件 -->
+    <script src="js/content-item.component.js"></script>
 
     <!-- home页的js -->
     <script src="js/home.js"></script>
 
 
     <!-- 微软头底部自带 -->
-<!--     <div style="display: none">
+    <div style="display: none">
         <script type="text/javascript">
             var varAutoFirePV = 1;
             var varClickTracking = 1;
@@ -106,7 +141,7 @@
             var Ctrl = "control_id";
             document.write("<script type='text/javascript' src='" + (window.location.protocol) + "//c.microsoft.com/ms.js'" + "'><\/script>");
         </script>​
-    </div> -->
+    </div>
     
 </body>
 

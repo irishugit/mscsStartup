@@ -167,12 +167,15 @@ body{
 .shell-search .shell-search-wrapper{margin:0 auto; position:relative;}
 .sr-only, .x-screen-reader{position: absolute!important; overflow:hidden!important; clip:rect(1px,1px,1px,1px)!important; width:1px !important; height:1px !important; border:none !important; padding:0 !important; margin:0!important;}
 .shell-search input, .shell-search input[type="search"]{
-	float:left; width:244px; height:36px; padding:0 10px; border:1px solid #a9a9a9;border-right:0;
+	float:left; /*width:244px;*/ height:36px; padding:0 10px; border:1px solid #a9a9a9;border-right:0;
 }
-.shell-search button{box-sizing: border-box; width:33px; padding:0; margin-left:-4px; background: #0078d7; cursor:pointer; top:0; right:0;}
+/*.shell-search button{box-sizing: border-box; width:33px; padding:0; margin-left:-4px; background: #0078d7; cursor:pointer; top:0; right:0;}*/
 
-@media (min-width:899px){
+/*@media (min-width:899px){*/
 	.shell-search button{background-color: transparent; position:static;  border:1px solid #a9a9a9; border-left:none;  height:36px;}
+/*}*/
+@media (min-width: 320px){
+
 }
 
 
@@ -186,14 +189,13 @@ body{
 .nav-wrapper{
 	width:100%;
 	font-size: 15px;
-	background-color: #0078D7;
+	background-color: black !important;
 	height:53px;
-	z-index: 19;
-}
-.nav-wrapper.fixed{
-	position: fixed;
-	top: 0;
-	left: 0;
+	border:none;
+	border-radius: 0;
+	color: white;
+	margin: 0;
+	z-index: 40 !important;
 }
 .nav-content{
 	width:90%;
@@ -201,43 +203,38 @@ body{
 	max-width: 1600px;
 }
 .nav-content .site_name{
-	font-size: 100%;
-	
+	font-size: 1.7rem;
 	height:53px;
 	line-height:53px;
 	float:left;
+	display:inline-block;
+	padding:0 1.5em;
 }
 
 .nav-content .site_name:hover{
-	background-color:#006CC2;
+	background-color:#272822;
 }
 
 
-.nav-content .site_name a{
-	display:inline-block;
-	padding:0 1.5em;
-	font-size: 20px;
-}
-.nav-content .site_name a,
-.nav-content .site_name a:hover,
-.nav-content .site_name a:visited,
-.nav-content .site_name a:link,
-.nav-content .site_name a:active,
-.nav-content .site_name a:focus,
-.nav-content .nav-list .nav-item:hover a{
+.nav-content .site_name,
+.nav-content .site_name:hover,
+.nav-content .site_name:visited,
+.nav-content .site_name:link,
+.nav-content .site_name:active,
+.nav-content .site_name:focus,
+.nav-content .nav-list .nav-item:hover{
 	color:#fff;
 	text-decoration:none;
 }
 
 .nav-content .nav-list{
 	float:left;
-	height:53px;
+	/*height:53px;*/
 	line-height:53px;
-
 }
 
 .nav-content .nav-list .nav-item:hover{
-	background-color: #006CC2;
+	background-color: #272822;
 }
 .nav-list .nav-item{
 	float:left;
@@ -247,14 +244,16 @@ body{
 	color: white;
 }
 .nav-list .nav-item.active,
-.nav-list .nav-item ul{
-	background-color: #006CC2;
+.nav-list .nav-item ul {
+	background-color: #272822;
 
 }
 .nav-item a{
 	color:#fff;
 	text-decoration: none;
 	display:inline-block;
+	padding: 0 1.5em;
+	margin:0 -1.5em;
 
 }
 
@@ -274,18 +273,17 @@ body{
 }
 
 .nav-list .nav-item ul li{
-	padding:15px 24px;
+	padding:0 24px;
 
 }
 .nav-item ul li:hover{
-	background-color: #0060AC;
+	background-color: black;
 }
 .nav-item ul li:hover a{
 	text-decoration: underline;
 }
 .nav-item ul li a{
 	display:block;
-	line-height:22.5px;
 }
 
 .nav-item ul li.on ul,

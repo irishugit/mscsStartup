@@ -2,9 +2,12 @@
 * @Author: Iris Hu
 * @Date:   2017-05-13 14:15:05
 * @Last Modified by:   Iris Hu
-* @Last Modified time: 2017-05-14 02:36:35
+* @Last Modified time: 2017-06-15 10:49:24
 */
 
+body{
+	min-width: 300px;
+}
 /*隐藏加载前大括号闪现问题*/
 [v-cloak] {
   display: none;
@@ -14,7 +17,8 @@
 	padding: 3rem 0;
 }
 .smallPadding{
-	padding: 1.5rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 /*定义a标签没有下划线*/
@@ -33,3 +37,456 @@
 .per-content:nth-child(odd){
 	background-color: #f2f2f2;
 }
+
+.nav-title{
+	margin: 0 ;
+	display: inline-block;
+}
+
+.ms-btn-blue{
+	border-radius: 0;
+	background-color: black;
+	color: white;
+	padding: .5rem 1.5rem;
+}
+.ms-btn-blue:hover,.ms-btn-blue:focus{
+	color: white;
+	background-color: #272822;
+}
+.aBtn:focus,.ms-btn-blue:focus{
+	outline: none;
+}
+
+/*重写导航navbar的样式*/
+.navbar-ms{
+	border: none;
+	background: none;
+	padding: 0 1.1rem;
+}
+.navbar-ms .navbar-toggle{
+	margin-right: 8px;
+}
+
+/*content-item文字显示区的下部，设备变化后见下面*/
+.content-item-right-bottom{
+	position: absolute;
+	bottom: 18px;
+	right: 1px;
+	width: inherit;
+	padding: 10px 16px 0 0;
+	background-color: white;
+}
+.content-item .content-item-textCon{
+	height: 50%;
+	overflow:hidden;
+}
+
+/*platformlist：设备宽大于750时显示两列*/
+.platformList{
+	width: 49% !important;
+	border:1px solid lightgrey;
+}
+.platformList:nth-child(odd){
+	margin-right: 20px;
+}
+.platformList .content-item-right-bottom{
+	bottom: 8px;
+}
+/*头部固定*/
+.fixed{
+	position: fixed;
+	top: 0;
+	z-index:30;
+}
+.fixed-content{
+	background-color: white;
+}
+/*新闻页内容高度更改*/
+#newsContain .content-item{
+	height: 150px !important;
+}
+#newsContain .content-item .content-item-textCon{
+	height: 60%;
+}
+/*平台页内容高度*/
+#platform .content-item{
+	height: 180px !important;
+}
+#platform .content-item .content-item-textCon{
+	height: 56%;
+}
+/*团队页内容*/
+#team .tab-pane li{
+	border-bottom: 1px solid lightgrey;
+}
+#team .content-item{
+	height: 210px !important;
+}
+#team .content-item .content-item-textCon{
+	height: 63%;
+}
+
+
+/*面包路径和二级导航栏备宽大于750时固定在顶部*/
+.bread{
+	width: 100%;
+}
+.fixed.bread{
+	top:53px;
+}
+.fixed#nav-div{
+	top:90px;
+}
+
+/*关于我们页面，头部图片*/
+.about-header-background{
+	background-repeat: no-repeat;
+	height: 17%;
+	background-size: cover;
+}
+/*关于我们中的联系我们*/
+.contact-us-container{
+	width: auto;
+	margin: 0 auto;
+}
+.contact-us-logo{
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	background-color: #f2f2f2;
+	text-align: center;
+	margin-right:2rem;
+	font-size: 1.5em;
+	border-radius: 100%;
+	display: inline-block;
+	float: left;
+
+}
+.contact-us-con{
+	color: #555;
+	display: inline-block;
+}
+
+
+/*文章内容的排版*/
+article{
+	padding-bottom: 2.5rem;
+}
+article h1,article h2,article h3,article h4{
+	margin: 2rem 1.5rem 0.7rem 1.5rem;
+	font-weight: 600;
+}
+article h5{
+	font-size: 1.1em;
+	font-weight: 600;
+}
+article h5,article h6{
+	color: grey;
+	margin:1.5rem 1.5rem 0.5rem 1.5rem;
+}
+article .level2{
+	display: inline-block;
+}
+article .level2#title{
+	margin-right: 20%;
+}
+article p,article li{
+	color:grey;
+	font-size: 1.1em;
+	text-indent: 2.5rem;
+	margin: 0.7rem 1.5rem;
+	line-height: 22px;
+}
+article img{
+	margin: 1.5rem;
+}
+article ul img{
+	margin-left: 6.5rem;
+}
+article ul{
+	list-style: disc inside;
+}
+
+/*project页面的排版*/
+#project .container{
+	text-align: center;
+	padding: 3rem 1rem;
+}
+#project .title{
+	margin-bottom: 2rem;
+	text-align: left;
+}
+#project .title b{
+	color: #05A6F0;
+}
+#project h3,#project h4{
+	margin-bottom: 1rem;
+}
+#project p{
+	text-indent: 2.5rem;
+	margin-bottom: .5rem;
+}
+
+#project .red{
+	color: red;
+}
+#project .projectUl{
+	list-style: square;
+	margin-left: 4.2rem;
+}
+#project p,#project .projectUl li{
+	font-size: 14px;
+	font-weight: 500;
+	text-align: left;
+	color: grey;
+	line-height: 26px;
+}
+
+#project .color-title{
+	color: black;
+	font-weight: 500;
+	padding:1rem;
+	text-align: left;
+}
+#project .flex{
+	display: block;
+	margin-bottom: 1.5rem;
+	margin-top: -1rem;
+}
+#project .flex .flex-child{
+	display: inline-block;
+}
+#project .flex .flex-child:first-child{
+	float:left;
+}
+#project .container img{
+	margin: 1.5rem;
+}
+#project .project-content{
+	padding-top: 6.5rem;
+}
+#project .project-content:first-child{
+	padding-top: 2rem;
+}
+#project .nav-pills{
+	width: 150px;
+	text-align: center;
+	position: fixed;
+	left: 10%;
+	padding: 3rem 0;
+	border-right: solid 1px lightgrey; 
+}
+#project .nav-pills a{
+	font-size: 1.5rem;
+	color: #05A6F0;
+}
+#project .nav-pills .active a{
+	background-color: #05A6F0;
+	color: white;
+	border-radius: 0;
+}
+
+/*
+	重写bootstrap里的布局
+ */
+/*流式全屏*/
+.container-fluid{
+	padding: 0;
+}
+/*banner左右两边按钮*/
+.carousel-control.right,.carousel-control.left{
+	background: none;
+}
+.carousel-control{
+	width: 9%;
+	font-size: 15px;
+}
+/*banner下的小圆点*/
+.carousel-indicators{
+	background-color: rgba(8,8,8,.2);
+	padding: 0 5px;
+	margin-left: -3%;
+	width: auto;
+}
+/*banner下的文字*/
+.carousel-caption{
+	background-color: rgba(8,8,8,.7);
+}
+.carousel-caption p{
+	width: 65%;
+	margin: 1rem auto;
+}
+/*导航条上的小屏上的图标*/
+.navbar-default .navbar-toggle{
+	border-color:transparent;
+}
+.navbar-default .navbar-toggle .icon-bar{
+	background-color:#f2f2f2; 
+}
+/*只改变ms的header按钮*/
+.navbar-ms .navbar-toggle .glyphicon{
+	font-size: 1.2em;
+	color: #666666;
+}
+/*显示的隐藏部分*/
+/*ms导航部分*/
+.navbar-ms .navbar-collapse, .navbar-default .navbar-form{
+	margin-bottom: .5rem;
+}
+.navbar-collapse{
+	padding: 0;
+}
+/*nav导航栏*/
+.nav-wrapper .navbar-collapse{
+	background-color: black;
+}
+.nav-wrapper .navbar-collapse.in{
+	overflow-y: visible;
+}
+
+@media (min-width: 1200px){
+	#project .container {
+	    width: 1000px;
+	}
+}
+
+
+@media (max-width: 925px){
+	.nav-wrapper .navbar-collapse.in,.nav-wrapper .collapsing{
+	
+		position: absolute;
+		left: 0;
+		width: 100%;
+		padding: 0 0 0 6%;
+	}
+	.nav-content .site_name{
+		padding-right: 1rem;
+	}
+	.platformList{
+		width: 100% !important;
+	}
+	.platformList .content-item{
+		margin-left: -15px;
+	}
+	.contact-us-logo{
+		margin:0 auto;
+		display: block;
+		float: none;
+		margin-bottom: 1rem;
+	}
+	.contact-us-container#shanghai{
+		width: 70%;
+	}
+	.contact-us-container#beijing{
+		width: 70%;
+	}
+	#project .container img{
+		width: 91%;
+	}
+
+	#project .container h3{
+		font-size: 18px;
+	}
+	#project .container p,#project .projectUl{
+		font-size: 14px;
+	}
+	#project .flex .flex-child{
+		float:none;
+		width: 100% !important;
+		margin-left:0;
+		margin-right:0;
+	}
+	#introduction .flex .flex-child{
+		width: auto !important;
+	}
+
+	#project #profit .flex p{
+		margin-top: 0 !important;
+	}
+	article img{
+		max-width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	
+}
+@media (max-width: 750px){
+	.tab-pane li{
+		border-bottom: solid 1px lightgrey;	
+	}
+	.content-item-right-bottom{
+		position: relative;
+		margin-top: 1.5rem;
+		padding-bottom: 15px;
+	}
+	.content-item-right-bottom .aNone{
+		float: none !important;
+	}
+	.content-item-img{
+		padding-right: 0;
+	}
+	/*小屏幕不固定二级导航栏*/
+/*	.fixed.nav,.fixed.bread{
+		position: relative ;
+	}*/
+	#newsContain.fixed#nav-div{
+		left:10px;
+		top:80px;
+	}
+	#nav-div{
+		overflow-y: hidden;
+		overflow-x: auto;
+		width: auto;
+		width: 100%;
+		height: 40px;
+	}
+	#nav-div .nav{
+		width: 700px;
+		height: 40px;
+	}
+	#newsContain #nav-div .nav{
+		width: 320px;
+	}
+	.fixed#nav-div,.fixed.bread,.fixed.nav{
+		padding-left: 15px;
+		margin-left: -15px;
+	}
+
+	/*改变小屏幕头部间距*/
+	.nav-content,.header-wrapper{
+		margin: 0;
+		width: 100%;
+	}
+	
+	.platformList{
+		padding-top: 0 !important;
+	}
+
+	/*新闻页内容高度更改*/
+	#newsContain .content-item .content-item-textCon{
+		height: 40%;
+	}
+	/*平台页内容高度*/
+	#platform .content-item .content-item-textCon{
+		height: 35%;
+	}
+	/*团队页内容*/
+	#team .content-item .content-item-textCon{
+		height: 30%;
+	}
+
+}
+.container#banner{
+	padding: 0;
+}
+/*大屏幕上的显示*/
+@media (min-width: 1600px){
+	/*设置大屏上显示的banner大小*/
+	.container#banner{
+		width: 1550px;
+	}
+	.container#quickNav{
+		width: 1550px;
+	}
+}
+
